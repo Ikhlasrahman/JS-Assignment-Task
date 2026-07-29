@@ -1,3 +1,5 @@
+//Problem 1
+
 function matchWinner(teamAGoals, teamBGoals) {
     // Write your code here…
 
@@ -8,21 +10,6 @@ function matchWinner(teamAGoals, teamBGoals) {
         Array.isArray(teamAGoals) || Array.isArray(teamBGoals)) {
         return "Invalid"
     }
-    // if(typeof teamAGoals===null || typeof teamBGoals === null){
-    //     return "Invalid"
-    // }
-
-    // if(typeof teamAGoals==="string" || typeof teamBGoals === "string"){
-    //     return "Invalid"
-    // }
-
-    //  if(typeof teamAGoals==="object" || typeof teamBGoals === "object"){
-    //     return "Invalid"
-    // }
-
-    // if (Array.isArray(teamAGoals) || Array.isArray(teamBGoals)){
-    //     return "Invalid";
-    // }
 
 
     if (teamAGoals > teamBGoals) {
@@ -31,5 +18,27 @@ function matchWinner(teamAGoals, teamBGoals) {
         return "Team B Won"
     } else if (teamAGoals === teamBGoals) {
         return "Draw"
+    }
+}
+
+//Problem 2
+function isElevatorSafe(weights) {
+    // Write your code here
+
+    if (!Array.isArray(weights)) {
+        return "Invalid"
+    }
+
+    let safeLimit = 400;
+    let totalWeight = 0;
+
+    for (let value of weights) {
+        totalWeight = totalWeight + value;
+    }
+
+    if (totalWeight <= safeLimit) {
+        return true;
+    } else {
+        return false;
     }
 }
